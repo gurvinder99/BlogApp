@@ -1,0 +1,35 @@
+### Login and get a JWT token
+POST http://localhost:5000/blog/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "password"
+}
+
+### Get all blogs
+GET http://localhost:5000/blog
+
+### Create a new blog (requires token)
+POST http://localhost:5000/blog
+Content-Type: application/json
+Authorization: Bearer <YourJWTTokenHere>
+
+{
+    "title": "New Blog Post",
+    "body": "This is the body of the blog post."
+}
+
+### Update a blog (requires token)
+PUT http://localhost:5000/blog/1
+Content-Type: application/json
+Authorization: Bearer <YourJWTTokenHere>
+
+{
+    "title": "Updated Blog Title",
+    "body": "This is the updated body."
+}
+
+### Delete a blog (requires token)
+DELETE http://localhost:5000/blog/1
+Authorization: Bearer <YourJWTTokenHere>
